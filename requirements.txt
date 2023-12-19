@@ -9,3 +9,4 @@ scikit-learn
 matplotlib
 seaborn
 python-dotenv
+nest_asyncio
