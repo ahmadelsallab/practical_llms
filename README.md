@@ -9,7 +9,6 @@ This course is structured into multiple projects, each focusing on a unique aspe
 ## Projects
 
 - `ChatGPT_Clone_Basic`: Learn the basics of interfacing with the OpenAI API to create a ChatGPT clone.
-- `ChatGPT_Clone_Streaming`: Enhance the ChatGPT clone with streaming capabilities.
 - `Azure_OpenAI_Extension`: Extend your knowledge to Azure's OpenAI services.
 - `OpenSource_LLM_Llama`: Explore open-source LLMs like Llama and their unique features.
 - `Streamlit_Interface`: Build a configurable Streamlit interface for interactive AI applications.
