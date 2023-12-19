@@ -1,0 +1,11 @@
+openai
+streamlit
+transformers
+flask
+requests
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+python-dotenv
