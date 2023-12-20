@@ -161,3 +161,4 @@ cython_debug/
 
 
 *.desktop.ini
+*.toml

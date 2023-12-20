@@ -12,3 +12,4 @@ python-dotenv
 transformers
 torch
 huggingface-hub
+streamlit_feedback
