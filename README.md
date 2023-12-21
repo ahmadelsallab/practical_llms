@@ -56,7 +56,7 @@ python -m venv env
 
 - Using conda/anaconda
 ```bash
-conda create --name llms_course python=3.8
+conda create --name llms_course python=3.12
 conda activate llms_course
 ```
 
