@@ -14,22 +14,25 @@ This section of the course explores various versions of a chatbot integrated wit
 - **Key Feature**: Extra context provided through a sidebar text area, integrated into the chat as a system message.
 - **Purpose**: Learn about streaming responses and managing chat history with additional context from user input.
 
-### v3: Chatbot with PDF Context
-- **Description**: Extends the chatbot to process and utilize content from an uploaded PDF file.
-- **Key Feature**: Integration of PDF content into the chatbot's system message.
-- **Purpose**: Explore handling file uploads and extracting content from PDFs to provide context to the chatbot.
-
-### v4: Chatbot with RAG Model and Vector DB
-- **Description**: Advanced chatbot using a Retrieval-Augmented Generation (RAG) model with vector database and semantic search.
+### v3: Chatbot with RAG Model and Vector DB
+- **Description**: Advanced chatbot using a Retrieval-Augmented Generation (RAG) model with vector database and semantic search. Extends the chatbot to process and utilize content from an uploaded PDF file.
 - **Key Feature**: Creates a vector database from PDF content and utilizes semantic search for context retrieval.
 
-    #### v4.1: Context via Prompt Templating
-    - **Sub-feature**: Append context to the user message using prompt templating.
-    - **Purpose**: Learn to dynamically modify chat prompts with relevant information from the vector database.
+### v4: Chatbot with RAG Model and Vector DB --> Show relevant context
+- **Description**: Same as V3, showing the relevant context using RAG.
+- **Key Feature**: Shows relevant context in side bar
 
-    #### v4.2: Context via System Message
-    - **Sub-feature**: Use the system message for context integration.
-    - **Purpose**: Understand the use of system messages for context provision in more advanced chatbot setups.
+### v5: Chatbot with RAG Model and Vector DB --> Format and parse relevant context
+- **Description**: Same as V4, formatting the retrieved context.
+- **Key Feature**: Formatting the retrieved context.
+
+### v5.1: Chatbot with RAG Model and Vector DB --> Use prompt directly instead of system_message
+- **Description**: Same as V5, but using the prompt template of the message, in case the LLM we use is not like OpenAI (not using System Message).
+- **Key Feature**: Use Prompt template of the message
+
+### v6: Generic hatbot with RAG Model and Vector DB --> Add system message in UI
+- **Description**: Same as V5, but instead of hard coding the system message, we can design our bot as we want.
+- **Key Feature**: Generic RAG Bot with configurable Persona.
 
 ## Learning Objectives
 - Understand the basics of integrating external content into chatbot responses.

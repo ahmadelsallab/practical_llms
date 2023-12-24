@@ -47,6 +47,17 @@ This section focuses on creating a ChatGPT clone using Streamlit, an open-source
 ## Getting Started
 Begin with v1 and progress through each version, following the instructions provided. Ensure you have Streamlit installed and are familiar with its basic operation. 
 
+### Streamlit secrets
+In some code versions we use st.secrets. This is similar to env files. But the variables are in a file called secrets.toml. This file is either kept in:
+- the same folder as the app, or 
+```
+your-app-directory/
+├─ .streamlit/
+│  ├─ secrets.toml
+├─ app.py
+```
+- system wide folder (in windows, this is under your user folder: C:\Users\<user-name>\.streamlit)
+
 ---
 
 Enjoy exploring the capabilities of Streamlit in building an advanced chatbot, and feel free to provide feedback or contributions to the project.

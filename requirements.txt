@@ -15,3 +15,7 @@ huggingface-hub
 streamlit_feedback
 replicate
 gpt4all
+langchain
+PyPDF2
+tiktoken
+faiss-cpu

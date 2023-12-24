@@ -11,7 +11,7 @@ Welcome to the `ChatGPT_Clone_Basic` project! This is the first practical projec
 - Understand the importance of security in API interactions.
 - Gain experience with JSON data structures.
 - Learn asynchronous programming techniques.
-- Explore streaming data handling.
+- Explore streaming data handling.cd
 - Develop a contextual understanding in chatbot applications.
 
 ## Prerequisites
