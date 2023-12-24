@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Streamlit: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "streamlit",
+            "args": ["run", "${file}"],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "STREAMLIT_SERVER_PORT": "8501"
+            }
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",

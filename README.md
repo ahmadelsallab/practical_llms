@@ -12,10 +12,9 @@ This course is structured into multiple projects, each focusing on a unique aspe
 - `OpenSource_LLM`: Explore open-source LLMs like Llama and their unique features.
 - `Streamlit_Interface`: Build a configurable Streamlit interface for interactive AI applications.
 - `Applications`: Delve into a variety of applications that demonstrate the power of LLMs:
-  - `ChatWithPDF_v1`: Create a chatbot that uses a PDF document as its knowledge base.
-  - `ChatWithPDF_v2`: Enhance the previous chatbot with vector databases and semantic search.
+  - `ChatWithPDF`: Create a chatbot that uses a PDF document as its knowledge base. Enhance the  with Retrieval Augmented Generation (RAG), vector databases and semantic search.
   - `YoutubeAssistant`: Develop an assistant that utilizes transcriptions from YouTube videos.
-  - `RecommenderSystem`: Implement a recommender system using LLMs and prompt engineering.
+  - `RecommenderSystem`: Implement a recommender system using LLMs, RAG and prompt engineering.
 
 ## Prerequisites
 
