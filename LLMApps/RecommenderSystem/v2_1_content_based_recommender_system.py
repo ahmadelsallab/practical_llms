@@ -18,7 +18,6 @@ def calculate_user_features(watched_movies, metadata, tfidf):
         if movie in metadata['title'].values:
             watched_overviews.append(metadata.loc[metadata['title'] == movie, 'overview'].iloc[0])
     watched_overviews_str = " ".join(watched_overviews)
-    print(watched_overviews_str)
     user_profile = tfidf.transform([watched_overviews_str])
     return user_profile
 
