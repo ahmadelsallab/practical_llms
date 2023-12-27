@@ -31,13 +31,34 @@ We will use MovieLense dataset. The dataset can be downloaded from [here](https:
    - Generates embeddings for movie overviews and stores them in a vector database.
    - Creates user embeddings from the user's watch history.
    - Recommends top-5 movies based on cosine similarity between user embedding and movie embeddings.
-   - Utilizes FAISS (from LangChain) for the vector database and OpenAI embeddings.
+   - Uses OpenAI ada2 for embeddings
+   - If the user watch history is unkown, we fall back to default recommendations, using simple recommender system (not personalized).
+
+### v3.1: calculates the embeddings in a loop, with averaging of all watched user movie embeddings
+
+### v3.2: Uses batch mode of embeddings in OpenAI ada2, with averaging of all watched user movie embeddings
+
+### v3.3: instead of averaging embeddings, we concatenate all watch history in one string and embed that.
+ This is a valid alternative:
+ 
+ Pros:
+ - Saves multiple API calls, which saves communication time
+ Cons:
+ - Consumes more tokens in text. But shoud be the same as multiple API calls.
+
 
 ### v4: Collaborative Filtering with ANN
 - **Description**: Enhances v3 by using Approximate Nearest Neighbor (ANN) search for recommendations.
 - **Implementation**:
    - Similar to v3 but employs `vector_db.similarity_search` for efficient retrieval of similar movies.
    - Leverages the power of ANN for scalable and fast recommendation generation.
+   - Uses langchain FAISS vectorstore and OpenAIEmbeddings in langchain.embeddings
+
+### v4.1: Uses movie titles as features
+This enables that the user enters watch history as natural text, like: "I watched The Dark Knight and Jumanji"
+
+### v4.2: Uses more movie features, like overview
+The user now is asked to enter the watch history as list. Internally, we should obrain the corresponding movie overviews and any extra metadata as features. We use that as text features to get their embeddings in `create_vector_database` and same for user features in `calculate_user_features`.
 
 ### v5: Recommender System with LLM
 - **Description**: In this version we leverage prompt engineering and output type forcing (JSON), to build a state of the art recommender system.
@@ -71,7 +92,7 @@ We will use MovieLense dataset. The dataset can be downloaded from [here](https:
 
 
    ### LLM prompt design:
-   `get_llm_recommendations` calls the OpenAI API. It shall not stream the answer. It also sets the system message which identifies the recommender persona and controls the output. Following prompt engineering rules, here is a working prompt design (note that: you can modify the debug via monitoring the justification of the returned recommendations to see if it make sense):
+   `get_llm_recommendations` calls the OpenAI API. It shall not use streaming mode to get the answer. It also sets the system message which identifies the recommender persona and controls the output. Following prompt engineering rules, here is a working prompt design (note that: you can modify the debug via monitoring the justification of the returned recommendations to see if it make sense):
 
    ```
    #Task:
@@ -108,6 +129,14 @@ We will use MovieLense dataset. The dataset can be downloaded from [here](https:
    - Provide your answer in json format only with no extra unformatted text so that I can parse it in code. 
    - Do not enclose your answer in ```json quotes
    ```
+
+   ### v5.1: feeding ALL movies--> fails due to large prompt beyond the context window of any model
+
+   ### v5.2: get random 1000 movies for llm prompt as `all_movies`
+
+   ### v5.3: use the simple recommender as a limiter for the top-1000 voted movies.
+
+   ### v5.4: use CF+ANN for pre-select top-1000 relevant movies to the user watch history.
 
    ### v6: Responsive Recommender System 
 - **Description**: Similar to v5, but with more responsive design. In v5, the user is blocked by the API call, which takes some time. This is called the online serving. We will use here "Lambda Architecture" for serving recommendations. In other words, we will have an online serving and offline preparation code:
