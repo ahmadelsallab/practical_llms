@@ -103,6 +103,7 @@ def clean_data():
     for feature in features:
         metadata[feature] = metadata[feature].apply(normalize_data)    
     return metadata
+
 def main():
     st.title("Content-Based Movie Recommender System with Additional Features")
     if 'feature_matrix' not in st.session_state:

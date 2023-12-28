@@ -55,7 +55,8 @@ def main():
                 response_placeholder.text_area("AI:", value=accumulated_response, height=300)
                 #response_placeholder.markdown("AI:" + accumulated_response)
             # Update the chat history with the full accumulated response
-            st.session_state.chat_history.append({"role": "assistant", "content": accumulated_response})
+            st.session_state.chat_history.append({"role": "assistant", 
+                                                  "content": accumulated_response})
             st.session_state.accumulated_response = accumulated_response
 
 # Running the Streamlit app
