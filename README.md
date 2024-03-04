@@ -104,7 +104,3 @@ We welcome contributions to this project! If you have suggestions, bug reports, 
 # License
 This project is licensed under [License Name - e.g., MIT License]. See the LICENSE file for more details.
 
-# Contact
-For any queries or feedback related to this course, feel free to reach out to [support@coursat.ai](mailto:support@aitar.ai).
-
-Enjoy your journey through the world of Practical LLMs!
